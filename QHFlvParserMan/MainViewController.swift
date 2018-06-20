@@ -28,10 +28,11 @@ class MainViewController: NSViewController {
             if num == NSApplication.ModalResponse.OK {
                 myFiledialog.close()
                 let url = myFiledialog.url!
-                print("\(url.path)")
+//                print("\(url.path)")
                 
                 let vc = ViewController.create()
                 let w = NSWindow(contentViewController: vc)
+                w.title = url.path
                 w.orderFront(nil)
                 vc.start(path: url.path)
             }
