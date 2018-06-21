@@ -194,12 +194,14 @@ extension ViewController: NSOutlineViewDelegate {
                     else if tC.title == "Ext" {
                         var content = ""
                         if flvBody.tag.tagType == .video, let tagBody = flvBody.tag.tagBody as? QHVideoTag {
-                            if tagBody.frameType == 1 {
-                                content = "keyframe"
-                            }
-                            else {
-                                content = "interframe"
-                            }
+//                            if tagBody.codecID == 7 {
+                                if tagBody.frameType == 1 {
+                                    content = "keyframe"
+                                }
+                                else {//0 为什么？？
+                                    content = "interframe"
+                                }
+//                            }
                         }
                         else if flvBody.tag.tagType == .audio, let tagBody = flvBody.tag.tagBody as? QHAudioTag {
                             content = "\(tagBody.soundRate ?? "") \(tagBody.soundSize ?? "") \(tagBody.soundType ?? "")"

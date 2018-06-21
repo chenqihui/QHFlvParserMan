@@ -311,7 +311,7 @@ extension QHFlvObject {
         var tag = QHFlvTag()
         if fileData.count > flvOffset + tagSizeBytesExceptHeaderAndBody {
             let v1 = uint(fileData[Int(flvOffset + 1)])
-            //2.2.1、0x08, 二进制为0000 1000，第3位为0, 表示为非加扰文件;
+            //2.2.1、0x08, 二进制为0000 1000，第5位为0, 表示为非加扰文件;
             if v1 & 0b00100000 == 0b00100000 {
                 //加扰文件
                 tag.signature = true
@@ -397,31 +397,46 @@ extension QHFlvObject {
         if v1_2>>2 == 3 {
             audioTag.soundRate = "44KHZ"
         }
+        else if v1_2>>2 == 2 {
+            audioTag.soundRate = "22KHZ"
+        }
+        else if v1_2>>2 == 1 {
+            audioTag.soundRate = "11KHZ"
+        }
+        else if v1_2>>2 == 0 {
+            audioTag.soundRate = "5.5KHZ"
+        }
         //3.3、第1位为1，表示该音频采样点位宽为16bits；
         let v1_3 = v1 & 0b00000010
         if v1_3>>1 == 1 {
             audioTag.soundSize = "16bits"
+        }
+        else if v1_3>>1 == 0 {
+            audioTag.soundSize = "8bits"
         }
         //3.4、第0位为1，表示该音频为立体声。
         let v1_4 = v1 & 0b00000001
         if v1_4 == 1 {
             audioTag.soundType = "立体声"
         }
+        else if v1_4 == 0 {
+            audioTag.soundType = "单声道"
+        }
+        //3.5、AudioSpecificConfig
         /*
-         3.5、
-         [3.3.1 AudioSpecificConfig]
          为什么AudioTagHeader中定义了音频的相关参数，我们还需要传递AudioSpecificConfig呢？
          
          因为当SoundFormat为AAC时，SoundType须设置为1（立体声），SoundRate须设置为3（44KHZ），但这并不意味着FLV文件中AAC编码的音频必须是44KHZ的立体声。播放器在播放AAC音频时，应忽略AudioTagHeader中的参数，并根据AudioSpecificConfig来配置正确的解码参数。
          */
         if audioTag.soundFormat == 10 {
+            //3.6、Audio的编码格式为AAC，并且十进制为0时，说明AACAUDIODATA中存放的是AAC sequence header，为0时，说明AACAUDIODATA中存放的是AAC raw；
             let v1 = uint(audioData[audioData.startIndex + 1])
-            audioTag.soundRate = "44KHZ"
-            audioTag.soundSize = "16bits"
-            audioTag.soundType = "立体声"
-            
-            //3.6、十进制为0，并且Audio的编码格式为AAC，说明AACAUDIODATA中存放的是AAC sequence header；
             audioTag.accPackType = v1
+            if v1 == 0 {//AAC sequence header
+                //AudioSpecificConfig，再拿具体配置
+                
+            }
+            
             //3.7、AUDIODATA数据，即AAC sequence header。
             audioTag.audioBody = audioData[audioData.startIndex + 2..<audioData.endIndex]
         }
@@ -446,8 +461,14 @@ extension QHFlvObject {
         //4.3、十进制为0，并且Video的编码格式为AVC，说明VideoTagBody中存放的是AVC sequence header
         let v2 = uint(videoData[videoData.startIndex + 1])
         
-        //4.4、VIDEODATA的内容
+        //4.4、AVCPacketType 表示接下来 VIDEODATA （AVCVIDEOPACKET）的内容
         videoTag.avcPackType = v2
+        if v2 == 0 {
+            //AVCDecoderConfigurationRecord（AVC sequence header）
+        }
+        else if v2 == 1 {
+            //One or more NALUs (Full frames are required)
+        }
         
         let v3 = uint(videoData[videoData.startIndex + 2])
         let v4 = uint(videoData[videoData.startIndex + 3])
