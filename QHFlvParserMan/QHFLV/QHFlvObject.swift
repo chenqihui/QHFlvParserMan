@@ -129,12 +129,12 @@ struct QHAudioTag {
     var soundRate: String?
     var soundSize: String?
     var soundType: String?
-    var accPackType: uint
+    var aacPackType: uint
     var audioBody: Any
     
     init() {
         soundFormat = 0
-        accPackType = 0
+        aacPackType = 0
         audioBody = 0
     }
 }
@@ -431,10 +431,12 @@ extension QHFlvObject {
         if audioTag.soundFormat == 10 {
             //3.6、Audio的编码格式为AAC，并且十进制为0时，说明AACAUDIODATA中存放的是AAC sequence header，为0时，说明AACAUDIODATA中存放的是AAC raw；
             let v1 = uint(audioData[audioData.startIndex + 1])
-            audioTag.accPackType = v1
+            audioTag.aacPackType = v1
             if v1 == 0 {//AAC sequence header
                 //AudioSpecificConfig，再拿具体配置
-                
+            }
+            else {
+                //aac raw
             }
             
             //3.7、AUDIODATA数据，即AAC sequence header。
