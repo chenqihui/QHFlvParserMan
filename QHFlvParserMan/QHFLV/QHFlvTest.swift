@@ -135,3 +135,7 @@ import Foundation
  
  0000 09 -- 数组结束位
  */
+
+/*
+ onMetaData = { ["audiosamplerate": 44100.0, "stereo": "YES", "framerate": 15.0, "width": 640.0, "videocodecid": 7.0, "encoder": "Lavf58.12.100", "audiosamplesize": 16.0, "height": 480.0, "audiocodecid": 10.0, "audiodatarate": 46.875, "duration": 32.665999999999997, "videodatarate": 488.28125, "filesize": 2271174.0] }
+ */
