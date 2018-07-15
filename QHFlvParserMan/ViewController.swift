@@ -16,7 +16,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet weak var mainOutlineView: NSOutlineView!
     
-    var flvObject: QHFlvObject?
+    var flvParser: QHFlvParser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,11 +121,13 @@ class ViewController: NSViewController {
     
     func start(path: String) {
         DispatchQueue.main.async {
-            self.flvObject = QHFlvObject(path: path)
-            let bResult = self.flvObject!.filePaser()
+            self.flvParser = QHFlvParser(path: path)
+            let bResult = self.flvParser!.filePaser()
             if bResult == false {
                 print("文件解析异常")
+                return
             }
+            print("onMetaData = { \(self.flvParser!.onMetaDataDic) }")
             self.loadFileData(path: path)
             self.mainOutlineView.reloadData()
         }
@@ -149,8 +151,8 @@ class ViewController: NSViewController {
 
 extension ViewController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-        if let obj = flvObject {
-            return obj.flvBodys.count
+        if let parser = flvParser {
+            return parser.flvBodys.count
         }
         return 0
     }
@@ -160,8 +162,8 @@ extension ViewController: NSOutlineViewDataSource {
     }
     
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        if let obj = flvObject {
-            return obj.flvBodys[index]
+        if let parser = flvParser {
+            return parser.flvBodys[index]
         }
         return ""
     }
@@ -198,7 +200,7 @@ extension ViewController: NSOutlineViewDelegate {
                                 if tagBody.frameType == 1 {
                                     content = "keyframe"
                                 }
-                                else {//0 为什么？？
+                                else if tagBody.frameType == 2 {
                                     content = "interframe"
                                 }
 //                            }

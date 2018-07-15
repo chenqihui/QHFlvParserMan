@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		74026B1D20D96B7B00DAA711 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74026B1C20D96B7B00DAA711 /* MainViewController.swift */; };
+		744B3CBF20FBA5DA0086505F /* QHFlvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CBE20FBA5DA0086505F /* QHFlvParser.swift */; };
+		744B3CC120FBA64C0086505F /* QHFlvTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CC020FBA64C0086505F /* QHFlvTest.swift */; };
+		744B3CC320FBA7F20086505F /* QHFlvParser+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CC220FBA7F20086505F /* QHFlvParser+Header.swift */; };
+		744B3CC520FBA91B0086505F /* QHFlvParser+Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CC420FBA91B0086505F /* QHFlvParser+Script.swift */; };
+		744B3CC720FBA9670086505F /* QHFlvParser+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CC620FBA9670086505F /* QHFlvParser+Audio.swift */; };
+		744B3CC920FBA9730086505F /* QHFlvParser+Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CC820FBA9730086505F /* QHFlvParser+Video.swift */; };
+		744B3CCB20FBA9A20086505F /* QHFlvParser+Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CCA20FBA9A20086505F /* QHFlvParser+Tag.swift */; };
+		744B3CCD20FBAC690086505F /* QHFlvParserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CCC20FBAC690086505F /* QHFlvParserUtil.swift */; };
 		749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382EE20CFA03800EEC47D /* AppDelegate.swift */; };
 		749382F120CFA03800EEC47D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382F020CFA03800EEC47D /* ViewController.swift */; };
 		749382F320CFA03800EEC47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749382F220CFA03800EEC47D /* Assets.xcassets */; };
@@ -19,6 +27,14 @@
 
 /* Begin PBXFileReference section */
 		74026B1C20D96B7B00DAA711 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		744B3CBE20FBA5DA0086505F /* QHFlvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFlvParser.swift; sourceTree = "<group>"; };
+		744B3CC020FBA64C0086505F /* QHFlvTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFlvTest.swift; sourceTree = "<group>"; };
+		744B3CC220FBA7F20086505F /* QHFlvParser+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHFlvParser+Header.swift"; sourceTree = "<group>"; };
+		744B3CC420FBA91B0086505F /* QHFlvParser+Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHFlvParser+Script.swift"; sourceTree = "<group>"; };
+		744B3CC620FBA9670086505F /* QHFlvParser+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHFlvParser+Audio.swift"; sourceTree = "<group>"; };
+		744B3CC820FBA9730086505F /* QHFlvParser+Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHFlvParser+Video.swift"; sourceTree = "<group>"; };
+		744B3CCA20FBA9A20086505F /* QHFlvParser+Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHFlvParser+Tag.swift"; sourceTree = "<group>"; };
+		744B3CCC20FBAC690086505F /* QHFlvParserUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFlvParserUtil.swift; sourceTree = "<group>"; };
 		749382EB20CFA03800EEC47D /* QHFlvParserMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QHFlvParserMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749382EE20CFA03800EEC47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		749382F020CFA03800EEC47D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +103,14 @@
 			isa = PBXGroup;
 			children = (
 				7493831920D665D000EEC47D /* QHFlvObject.swift */,
+				744B3CBE20FBA5DA0086505F /* QHFlvParser.swift */,
+				744B3CC220FBA7F20086505F /* QHFlvParser+Header.swift */,
+				744B3CCA20FBA9A20086505F /* QHFlvParser+Tag.swift */,
+				744B3CC420FBA91B0086505F /* QHFlvParser+Script.swift */,
+				744B3CC620FBA9670086505F /* QHFlvParser+Audio.swift */,
+				744B3CC820FBA9730086505F /* QHFlvParser+Video.swift */,
+				744B3CCC20FBAC690086505F /* QHFlvParserUtil.swift */,
+				744B3CC020FBA64C0086505F /* QHFlvTest.swift */,
 			);
 			path = QHFLV;
 			sourceTree = "<group>";
@@ -164,8 +188,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744B3CC320FBA7F20086505F /* QHFlvParser+Header.swift in Sources */,
+				744B3CC520FBA91B0086505F /* QHFlvParser+Script.swift in Sources */,
 				749382F120CFA03800EEC47D /* ViewController.swift in Sources */,
 				7493831A20D665D000EEC47D /* QHFlvObject.swift in Sources */,
+				744B3CC720FBA9670086505F /* QHFlvParser+Audio.swift in Sources */,
+				744B3CCB20FBA9A20086505F /* QHFlvParser+Tag.swift in Sources */,
+				744B3CBF20FBA5DA0086505F /* QHFlvParser.swift in Sources */,
+				744B3CC920FBA9730086505F /* QHFlvParser+Video.swift in Sources */,
+				744B3CCD20FBAC690086505F /* QHFlvParserUtil.swift in Sources */,
+				744B3CC120FBA64C0086505F /* QHFlvTest.swift in Sources */,
 				749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */,
 				74026B1D20D96B7B00DAA711 /* MainViewController.swift in Sources */,
 			);
