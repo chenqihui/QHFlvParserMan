@@ -1,14 +1,14 @@
 //
-//  QHFlvParserUtil.swift
+//  QHParserUtil.swift
 //  QHFlvParserMan
 //
-//  Created by Anakin chen on 2018/7/16.
+//  Created by Anakin chen on 2018/7/20.
 //  Copyright © 2018年 Chen Network Technology. All rights reserved.
 //
 
 import Cocoa
 
-class QHFlvParserUtil: NSObject {
+class QHParserUtil: NSObject {
     
     class func hexToDecimal(data: Data, startIndex: Int, count: Int) -> UInt64 {
         var index = startIndex
@@ -24,7 +24,7 @@ class QHFlvParserUtil: NSObject {
     }
     
     class func hexToDouble(data: Data, startIndex: Int, count: Int) -> Double {
-        let number: UInt64 = QHFlvParserUtil.hexToDecimal(data: data, startIndex: startIndex, count: count)
+        let number: UInt64 = QHParserUtil.hexToDecimal(data: data, startIndex: startIndex, count: count)
         let numberValue = Double(bitPattern: number)
         
         return numberValue
@@ -44,6 +44,14 @@ class QHFlvParserUtil: NSObject {
             }
         }
         return value
+    }
+    
+    class func printHex(data: Data) {
+        var hexString = ""
+        for i in 0..<data.count {
+            hexString += String(format: "%02X ", data[data.startIndex + i])
+        }
+        print("sizeData = \(hexString)")
     }
 
 }

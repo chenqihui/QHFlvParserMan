@@ -26,7 +26,7 @@ extension QHFlvParser {
         
         switch v1 {
         case 0:
-            let number = QHFlvParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
+            let number = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
             index += 4
             print("\(number)")
         case 1:
@@ -34,13 +34,13 @@ extension QHFlvParser {
             let v1 = uint(data[index])
             print("\(v1)")
         case 2:
-            let length = uint(QHFlvParserUtil.hexToDecimal(data: data, startIndex: index, count: 2))
+            let length = uint(QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 2))
             index += 2
-            let value = QHFlvParserUtil.hexToString(data: data, startIndex: index, length: length)
+            let value = QHParserUtil.hexToString(data: data, startIndex: index, length: length)
             index += Int(length)
             print("\(value) = ")
         case 8:
-            let count = Int(QHFlvParserUtil.hexToDecimal(data: data, startIndex: index, count: 4))
+            let count = Int(QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4))
             index += 4
             for _ in 0..<count {
                 index = scriptArrayPaser(data, startIndex: index)
@@ -54,9 +54,9 @@ extension QHFlvParser {
     
     private func scriptArrayPaser(_ data: Data, startIndex: Int) -> Int {
         var index = startIndex
-        let length = uint(QHFlvParserUtil.hexToDecimal(data: data, startIndex: index, count: 2))
+        let length = uint(QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 2))
         index += 2
-        let keyValue = QHFlvParserUtil.hexToString(data: data, startIndex: index, length: length)
+        let keyValue = QHParserUtil.hexToString(data: data, startIndex: index, length: length)
         index += Int(length)
         
         index += 1
@@ -64,7 +64,7 @@ extension QHFlvParser {
         
         switch valueType {
         case 0:
-            let number = QHFlvParserUtil.hexToDouble(data: data, startIndex: index, count: 8)
+            let number = QHParserUtil.hexToDouble(data: data, startIndex: index, count: 8)
             index += 8
             onMetaDataDic[keyValue] = number
         case 1:
@@ -73,9 +73,9 @@ extension QHFlvParser {
             let bResult = v1 != 0 ? "YES" : "NO"
             onMetaDataDic[keyValue] = bResult
         case 2:
-            let length = uint(QHFlvParserUtil.hexToDecimal(data: data, startIndex: index, count: 2))
+            let length = uint(QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 2))
             index += 2
-            let value = QHFlvParserUtil.hexToString(data: data, startIndex: index, length: length)
+            let value = QHParserUtil.hexToString(data: data, startIndex: index, length: length)
             index += Int(length)
             onMetaDataDic[keyValue] = value
         default:

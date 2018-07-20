@@ -16,7 +16,7 @@ extension QHFlvParser {
     //2.1、PreviousTagSize的长度为4个字节，用来表示前一个Tag的长度
     func previousTagSize(startIndex: Int) -> uint {
         if fileData.count > uint(startIndex) + QHFlvParser.previousTagSizeBytes {
-            let size = QHFlvParserUtil.hexToDecimal(data: fileData, startIndex: startIndex, count: 4)
+            let size = QHParserUtil.hexToDecimal(data: fileData, startIndex: startIndex, count: 4)
             
             return uint(size)
         }
@@ -60,22 +60,22 @@ extension QHFlvParser {
                 tag.tagType = .script
             }
             //2.2.4、Tag的内容长度为，与该tag后面的previousTagSize() - 11相同；
-            var number = QHFlvParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 3)
+            var number = QHParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 3)
             tag.dataSize = uint(number)
             index += 3
             
             //2.2.5、当前Audio数据的时间戳；
-            number = QHFlvParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 3)
+            number = QHParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 3)
             tag.timestamp = uint(number)
             index += 3
             
             //2.2.6、扩展时间戳，如果扩展时间戳不为0，那么该Tag的时间戳应为：Timestamp | TimestampExtended<<24；
-            number = QHFlvParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 1)
+            number = QHParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 1)
             tag.timestampExtended = uint(number)
             index += 1
             
             //2.2.7、StreamID
-            number = QHFlvParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 3)
+            number = QHParserUtil.hexToDecimal(data: fileData, startIndex: index, count: 3)
             tag.streamID = uint(number)
             index += 3
             

@@ -37,7 +37,7 @@ extension QHFlvParser {
         }
         
         //4.5、CompositonTime相对时间戳，如果AVCPacketType=0x01，为相对时间戳，其它均为0；
-        let number = QHFlvParserUtil.hexToDecimal(data: data, startIndex: index, count: 3)
+        let number = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 3)
         tag.compositionTime = uint(number)
         index += 3
         

@@ -55,7 +55,7 @@ extension QHFlvParser {
     //1.4、0x00000005 - 0x00000008 : 0x00 0x00 0x00 0x09，转十进制为9，表示FLV header的长度，当FLV 版本号为1时，该值通常为9。
     func headerLength() -> uint {
         if fileData.count > 9 {
-            let length = QHFlvParserUtil.hexToDecimal(data: fileData, startIndex: 4, count: 4)
+            let length = QHParserUtil.hexToDecimal(data: fileData, startIndex: 4, count: 4)
             return uint(length)
         }
         return 0
