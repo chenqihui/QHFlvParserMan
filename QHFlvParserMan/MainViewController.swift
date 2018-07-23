@@ -14,7 +14,7 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        if let path = Bundle.main.path(forResource: "dump", ofType: "mp4") {
+        if let path = Bundle.main.path(forResource: "good", ofType: "mp4") {
             let test = QHMP4Parser(path: path)
             test.test()
         }

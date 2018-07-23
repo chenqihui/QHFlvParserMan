@@ -34,6 +34,12 @@ struct QHMP4BoxHeader {
     var type: QHMP4BoxType = .none
 }
 
+struct QHMP4Ftyp {
+    var majorBrand: String = ""
+    var minorVersion: Int = 0
+    var compatibleBrands = [String]()
+}
+
 /*
  - ftyp
  - free
@@ -56,10 +62,39 @@ enum QHMP4BoxType: String {
     case free = "free"
     case mdat = "mdat"
     case moov = "moov"
+    // moov sub
     case mvhd = "mvhd"
     case trak = "trak"
+    //
+    // trak sub
     case tkhd = "tkhd"
     case edts = "edts"
     case mdia = "mdia"
+    //
     case udta = "udta"
+    // mdia sub
+    case mdhd = "mdhd"
+    case hdlr = "hdlr"
+    case minf = "minf"
+    //
+    // minf sub
+    case vmhd = "vmhd"
+    case smhd = "smhd"
+    case dinf = "dinf"
+    case stbl = "stbl"
+    //
+    // dinf sub
+    case dref = "dref"
+    //
+    // stbl sub
+    case stsd = "stsd"
+    case stts = "stts"
+    case stss = "stss"
+    case ctts = "ctts"
+    case stsc = "stsc"
+    case stsz = "stsz"
+    case stco = "stco"
+    case sgpd = "sgpd"
+    case sbgp = "sbgp"
+    //
 }

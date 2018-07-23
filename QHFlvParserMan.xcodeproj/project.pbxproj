@@ -11,6 +11,7 @@
 		7430B702210192A70037D712 /* QHParserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430B701210192A70037D712 /* QHParserUtil.swift */; };
 		7430B704210193AD0037D712 /* QHMP4Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430B703210193AD0037D712 /* QHMP4Object.swift */; };
 		7430B7062101C0370037D712 /* QHMP4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430B7052101C0370037D712 /* QHMP4Test.swift */; };
+		7430B7082101DA7E0037D712 /* good.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7430B7072101DA7E0037D712 /* good.mp4 */; };
 		744B3CBF20FBA5DA0086505F /* QHFlvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CBE20FBA5DA0086505F /* QHFlvParser.swift */; };
 		744B3CC120FBA64C0086505F /* QHFlvTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CC020FBA64C0086505F /* QHFlvTest.swift */; };
 		744B3CC320FBA7F20086505F /* QHFlvParser+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B3CC220FBA7F20086505F /* QHFlvParser+Header.swift */; };
@@ -33,6 +34,7 @@
 		7430B701210192A70037D712 /* QHParserUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHParserUtil.swift; sourceTree = "<group>"; };
 		7430B703210193AD0037D712 /* QHMP4Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMP4Object.swift; sourceTree = "<group>"; };
 		7430B7052101C0370037D712 /* QHMP4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMP4Test.swift; sourceTree = "<group>"; };
+		7430B7072101DA7E0037D712 /* good.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = good.mp4; sourceTree = "<group>"; };
 		744B3CBE20FBA5DA0086505F /* QHFlvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFlvParser.swift; sourceTree = "<group>"; };
 		744B3CC020FBA64C0086505F /* QHFlvTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFlvTest.swift; sourceTree = "<group>"; };
 		744B3CC220FBA7F20086505F /* QHFlvParser+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHFlvParser+Header.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		7493831320D65D9000EEC47D /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				7430B7072101DA7E0037D712 /* good.mp4 */,
 				7493831520D65DC500EEC47D /* dump.flv */,
 				7493831420D65DC500EEC47D /* dump.mp4 */,
 			);
@@ -202,6 +205,7 @@
 				7493831720D65DC500EEC47D /* dump.flv in Resources */,
 				749382F320CFA03800EEC47D /* Assets.xcassets in Resources */,
 				7493831620D65DC500EEC47D /* dump.mp4 in Resources */,
+				7430B7082101DA7E0037D712 /* good.mp4 in Resources */,
 				749382F620CFA03800EEC47D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
