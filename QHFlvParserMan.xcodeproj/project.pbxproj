@@ -26,6 +26,15 @@
 		7493831620D65DC500EEC47D /* dump.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7493831420D65DC500EEC47D /* dump.mp4 */; };
 		7493831720D65DC500EEC47D /* dump.flv in Resources */ = {isa = PBXBuildFile; fileRef = 7493831520D65DC500EEC47D /* dump.flv */; };
 		7493831A20D665D000EEC47D /* QHFlvObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7493831920D665D000EEC47D /* QHFlvObject.swift */; };
+		74B19A7E2106CA2B008F70C5 /* mp4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 74B19A7C2106CA2B008F70C5 /* mp4.pdf */; };
+		74B19A7F2106CA2B008F70C5 /* video_file_format_spec_v10_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 74B19A7D2106CA2B008F70C5 /* video_file_format_spec_v10_1.pdf */; };
+		74B19A812106CAFA008F70C5 /* QHMP4Parser+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A802106CAFA008F70C5 /* QHMP4Parser+Root.swift */; };
+		74B19A832106CCF2008F70C5 /* QHMP4Parser+Moov.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A822106CCF2008F70C5 /* QHMP4Parser+Moov.swift */; };
+		74B19A852106CDE3008F70C5 /* QHMP4Parser+Trak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A842106CDE3008F70C5 /* QHMP4Parser+Trak.swift */; };
+		74B19A872106CF1F008F70C5 /* QHMP4Parser+Mdia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A862106CF1F008F70C5 /* QHMP4Parser+Mdia.swift */; };
+		74B19A892106CFBD008F70C5 /* QHMP4Parser+Minf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A882106CFBD008F70C5 /* QHMP4Parser+Minf.swift */; };
+		74B19A8B2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A8A2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift */; };
+		74B19A8D2106D104008F70C5 /* QHMP4Parser+Stbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A8C2106D104008F70C5 /* QHMP4Parser+Stbl.swift */; };
 		74FD1DDD21006A5500F1DA3E /* QHMP4Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD1DDC21006A5500F1DA3E /* QHMP4Parser.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +61,15 @@
 		7493831420D65DC500EEC47D /* dump.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dump.mp4; sourceTree = "<group>"; };
 		7493831520D65DC500EEC47D /* dump.flv */ = {isa = PBXFileReference; lastKnownFileType = file; path = dump.flv; sourceTree = "<group>"; };
 		7493831920D665D000EEC47D /* QHFlvObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFlvObject.swift; sourceTree = "<group>"; };
+		74B19A7C2106CA2B008F70C5 /* mp4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mp4.pdf; sourceTree = "<group>"; };
+		74B19A7D2106CA2B008F70C5 /* video_file_format_spec_v10_1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = video_file_format_spec_v10_1.pdf; sourceTree = "<group>"; };
+		74B19A802106CAFA008F70C5 /* QHMP4Parser+Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Root.swift"; sourceTree = "<group>"; };
+		74B19A822106CCF2008F70C5 /* QHMP4Parser+Moov.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Moov.swift"; sourceTree = "<group>"; };
+		74B19A842106CDE3008F70C5 /* QHMP4Parser+Trak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Trak.swift"; sourceTree = "<group>"; };
+		74B19A862106CF1F008F70C5 /* QHMP4Parser+Mdia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Mdia.swift"; sourceTree = "<group>"; };
+		74B19A882106CFBD008F70C5 /* QHMP4Parser+Minf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Minf.swift"; sourceTree = "<group>"; };
+		74B19A8A2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Dinf.swift"; sourceTree = "<group>"; };
+		74B19A8C2106D104008F70C5 /* QHMP4Parser+Stbl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Stbl.swift"; sourceTree = "<group>"; };
 		74FD1DDC21006A5500F1DA3E /* QHMP4Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMP4Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +111,7 @@
 		749382ED20CFA03800EEC47D /* QHFlvParserMan */ = {
 			isa = PBXGroup;
 			children = (
+				74B19A7B2106CA0F008F70C5 /* Documentor */,
 				7430B7002101928B0037D712 /* QHParserUtil */,
 				74FD1DDB21006A2700F1DA3E /* QHMP4 */,
 				7493831820D665A600EEC47D /* QHFLV */,
@@ -133,11 +152,27 @@
 			path = QHFLV;
 			sourceTree = "<group>";
 		};
+		74B19A7B2106CA0F008F70C5 /* Documentor */ = {
+			isa = PBXGroup;
+			children = (
+				74B19A7C2106CA2B008F70C5 /* mp4.pdf */,
+				74B19A7D2106CA2B008F70C5 /* video_file_format_spec_v10_1.pdf */,
+			);
+			path = Documentor;
+			sourceTree = "<group>";
+		};
 		74FD1DDB21006A2700F1DA3E /* QHMP4 */ = {
 			isa = PBXGroup;
 			children = (
 				7430B703210193AD0037D712 /* QHMP4Object.swift */,
 				74FD1DDC21006A5500F1DA3E /* QHMP4Parser.swift */,
+				74B19A802106CAFA008F70C5 /* QHMP4Parser+Root.swift */,
+				74B19A822106CCF2008F70C5 /* QHMP4Parser+Moov.swift */,
+				74B19A842106CDE3008F70C5 /* QHMP4Parser+Trak.swift */,
+				74B19A862106CF1F008F70C5 /* QHMP4Parser+Mdia.swift */,
+				74B19A882106CFBD008F70C5 /* QHMP4Parser+Minf.swift */,
+				74B19A8A2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift */,
+				74B19A8C2106D104008F70C5 /* QHMP4Parser+Stbl.swift */,
 				7430B7052101C0370037D712 /* QHMP4Test.swift */,
 			);
 			path = QHMP4;
@@ -202,9 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B19A7E2106CA2B008F70C5 /* mp4.pdf in Resources */,
 				7493831720D65DC500EEC47D /* dump.flv in Resources */,
 				749382F320CFA03800EEC47D /* Assets.xcassets in Resources */,
 				7493831620D65DC500EEC47D /* dump.mp4 in Resources */,
+				74B19A7F2106CA2B008F70C5 /* video_file_format_spec_v10_1.pdf in Resources */,
 				7430B7082101DA7E0037D712 /* good.mp4 in Resources */,
 				749382F620CFA03800EEC47D /* Main.storyboard in Resources */,
 			);
@@ -224,13 +261,20 @@
 				744B3CC720FBA9670086505F /* QHFlvParser+Audio.swift in Sources */,
 				7430B7062101C0370037D712 /* QHMP4Test.swift in Sources */,
 				7430B704210193AD0037D712 /* QHMP4Object.swift in Sources */,
+				74B19A812106CAFA008F70C5 /* QHMP4Parser+Root.swift in Sources */,
 				744B3CCB20FBA9A20086505F /* QHFlvParser+Tag.swift in Sources */,
+				74B19A872106CF1F008F70C5 /* QHMP4Parser+Mdia.swift in Sources */,
 				744B3CBF20FBA5DA0086505F /* QHFlvParser.swift in Sources */,
+				74B19A8B2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift in Sources */,
 				7430B702210192A70037D712 /* QHParserUtil.swift in Sources */,
 				744B3CC920FBA9730086505F /* QHFlvParser+Video.swift in Sources */,
 				744B3CC120FBA64C0086505F /* QHFlvTest.swift in Sources */,
+				74B19A852106CDE3008F70C5 /* QHMP4Parser+Trak.swift in Sources */,
 				749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */,
+				74B19A832106CCF2008F70C5 /* QHMP4Parser+Moov.swift in Sources */,
+				74B19A892106CFBD008F70C5 /* QHMP4Parser+Minf.swift in Sources */,
 				74026B1D20D96B7B00DAA711 /* MainViewController.swift in Sources */,
+				74B19A8D2106D104008F70C5 /* QHMP4Parser+Stbl.swift in Sources */,
 				74FD1DDD21006A5500F1DA3E /* QHMP4Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

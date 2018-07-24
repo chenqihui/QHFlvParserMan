@@ -13,6 +13,7 @@ struct QHMP4Box {
     var header = QHMP4BoxHeader()
     var body: Data?
     var boxs: [QHMP4Box]?
+    var dicValue: [String: Any]?
     
     func printBox() {
         print("offset = \(offset)")
@@ -65,13 +66,13 @@ enum QHMP4BoxType: String {
     // moov sub
     case mvhd = "mvhd"
     case trak = "trak"
+    case udta = "udta"
     //
     // trak sub
     case tkhd = "tkhd"
     case edts = "edts"
     case mdia = "mdia"
     //
-    case udta = "udta"
     // mdia sub
     case mdhd = "mdhd"
     case hdlr = "hdlr"
