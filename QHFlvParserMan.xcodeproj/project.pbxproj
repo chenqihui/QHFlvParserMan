@@ -35,6 +35,7 @@
 		74B19A892106CFBD008F70C5 /* QHMP4Parser+Minf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A882106CFBD008F70C5 /* QHMP4Parser+Minf.swift */; };
 		74B19A8B2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A8A2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift */; };
 		74B19A8D2106D104008F70C5 /* QHMP4Parser+Stbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A8C2106D104008F70C5 /* QHMP4Parser+Stbl.swift */; };
+		74B19A9C21078395008F70C5 /* QHMP4Parser+Udta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B19A9B21078395008F70C5 /* QHMP4Parser+Udta.swift */; };
 		74FD1DDD21006A5500F1DA3E /* QHMP4Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD1DDC21006A5500F1DA3E /* QHMP4Parser.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		74B19A882106CFBD008F70C5 /* QHMP4Parser+Minf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Minf.swift"; sourceTree = "<group>"; };
 		74B19A8A2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Dinf.swift"; sourceTree = "<group>"; };
 		74B19A8C2106D104008F70C5 /* QHMP4Parser+Stbl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Stbl.swift"; sourceTree = "<group>"; };
+		74B19A9B21078395008F70C5 /* QHMP4Parser+Udta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHMP4Parser+Udta.swift"; sourceTree = "<group>"; };
 		74FD1DDC21006A5500F1DA3E /* QHMP4Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMP4Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 				74B19A882106CFBD008F70C5 /* QHMP4Parser+Minf.swift */,
 				74B19A8A2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift */,
 				74B19A8C2106D104008F70C5 /* QHMP4Parser+Stbl.swift */,
+				74B19A9B21078395008F70C5 /* QHMP4Parser+Udta.swift */,
 				7430B7052101C0370037D712 /* QHMP4Test.swift */,
 			);
 			path = QHMP4;
@@ -273,6 +276,7 @@
 				749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */,
 				74B19A832106CCF2008F70C5 /* QHMP4Parser+Moov.swift in Sources */,
 				74B19A892106CFBD008F70C5 /* QHMP4Parser+Minf.swift in Sources */,
+				74B19A9C21078395008F70C5 /* QHMP4Parser+Udta.swift in Sources */,
 				74026B1D20D96B7B00DAA711 /* MainViewController.swift in Sources */,
 				74B19A8D2106D104008F70C5 /* QHMP4Parser+Stbl.swift in Sources */,
 				74FD1DDD21006A5500F1DA3E /* QHMP4Parser.swift in Sources */,

@@ -11,6 +11,7 @@
  
  1.tkhd
  2.edts
+    container box
  3.mdia
     container box
  */
@@ -70,5 +71,47 @@ func tkhdParser(data: Data) -> [String: Any] {
         dicValue["width"] = "\(width1).\(width2)"
         dicValue["height"] = "\(height1).\(height2)"
     }
+    return dicValue
+}
+
+
+
+func elstParser(data: Data) -> [String: Any] {
+    
+    var dicValue = [String: Any]()
+    
+    var index = data.startIndex
+    let version = uint(data[index])
+    dicValue["version"] = version
+    
+    if version == 0 {
+        let flags = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 3)
+        index += 3
+        let entryCount = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
+        index += 4
+        
+        var arr = [Any]()
+        for _ in 0..<Int(entryCount) {
+            let segmentDuration = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
+            index += 4
+            let mediaTime = QHParserUtil.hexToDecimal(data: data, startIndex: index + 4, count: 4)
+            index += 4
+            
+            let mediaRateInteger = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 2)
+            index += 2
+            let mediaRateFraction = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 2)
+            index += 2
+            
+            arr.append(["segmentDuration": segmentDuration])
+            arr.append(["mediaTime": mediaTime])
+            arr.append(["mediaRateInteger": mediaRateInteger])
+            arr.append(["mediaRateFraction": mediaRateFraction])
+        }
+        
+        dicValue["flags"] = flags
+        dicValue["entryCount"] = entryCount
+        dicValue["entryArr"] = arr
+    }
+    
     return dicValue
 }

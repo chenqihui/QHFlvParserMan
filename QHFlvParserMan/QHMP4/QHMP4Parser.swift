@@ -68,7 +68,7 @@ class QHMP4Parser: NSObject {
             switch box.header.type {
             case .ftyp:
                 box.dicValue = ftypParser(data: boxBody)
-            case .moov, .trak, .mdia, .minf, .dinf, .stbl:
+            case .moov, .trak, .mdia, .minf, .dinf, .stbl, .udta, .edts:
                 box.boxs = boxParser(data: boxBody)
             case .mvhd:
                 box.dicValue = mvhdParser(data: boxBody)
@@ -86,6 +86,10 @@ class QHMP4Parser: NSObject {
                 box.dicValue = drefParser(data: boxBody)
             case .stsd:
                 box.dicValue = stsdParser(data: boxBody)
+            case .meta:
+                box.dicValue = metaParser(data: boxBody)
+            case .elst:
+                box.dicValue = elstParser(data: boxBody)
             default:
                 box.body = boxBody
                 break

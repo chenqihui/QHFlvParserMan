@@ -63,7 +63,7 @@ enum QHMP4BoxType: String {
     case free = "free"
     case mdat = "mdat"
     case moov = "moov"
-    // moov sub
+    // moov or trak sub
     case mvhd = "mvhd"
     case trak = "trak"
     case udta = "udta"
@@ -97,5 +97,11 @@ enum QHMP4BoxType: String {
     case stco = "stco"
     case sgpd = "sgpd"
     case sbgp = "sbgp"
+    //
+    // udta sub
+    case meta = "meta"
+    //
+    // edts sub
+    case elst = "elst"
     //
 }
