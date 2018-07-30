@@ -15,6 +15,26 @@ struct QHMP4Box {
     var boxs: [QHMP4Box]?
     var dicValue: [String: Any]?
     
+    var description: String {
+        get {
+            var string = "offset = \(offset)"
+            string += "\r\n"
+            string += "header.size = \(header.size)"
+            string += "\r\n"
+            string += "header.type = \(header.type)"
+            string += "\r\n"
+            if let dic = dicValue {
+                for (key, value) in dic {
+                    string += "\(key) = \(value)"
+                    string += "\r\n"
+                }
+            }
+            
+            return string
+        }
+    }
+    
+    
     func printBox() {
         print("offset = \(offset)")
         print("header.size = \(header.size)")
@@ -33,12 +53,6 @@ struct QHMP4Box {
 struct QHMP4BoxHeader {
     var size: Int = 0
     var type: QHMP4BoxType = .none
-}
-
-struct QHMP4Ftyp {
-    var majorBrand: String = ""
-    var minorVersion: Int = 0
-    var compatibleBrands = [String]()
 }
 
 /*

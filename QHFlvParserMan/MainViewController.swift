@@ -13,11 +13,6 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
-        if let path = Bundle.main.path(forResource: "good", ofType: "mp4") {
-            let test = QHMP4Parser(path: path)
-            test.test()
-        }
     }
     
     
@@ -33,12 +28,22 @@ class MainViewController: NSViewController {
             if num == NSApplication.ModalResponse.OK {
                 myFiledialog.close()
                 let url = myFiledialog.url!
-                
-                let vc = ViewController.create()
-                let w = NSWindow(contentViewController: vc)
-                w.title = url.path
-                w.orderFront(nil)
-                vc.start(path: url.path)
+                let pathExtension = url.pathExtension.uppercased()
+                var window: NSWindow?
+                if pathExtension == "FLV" {
+                    let vc = ViewController.create()
+                    window = NSWindow(contentViewController: vc)
+                    vc.start(path: url.path)
+                }
+                else if pathExtension == "MP4" {
+                    let vc = QHMP4ViewController.create()
+                    window = NSWindow(contentViewController: vc)
+                    vc.start(path: url.path)
+                }
+                if let w = window {
+                    w.orderFront(nil)
+                    w.title = url.path
+                }
             }
             else {
                 myFiledialog.close()
