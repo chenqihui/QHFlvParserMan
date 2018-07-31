@@ -90,7 +90,7 @@ func elstParser(data: Data) -> [String: Any] {
         let entryCount = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
         index += 4
         
-        var arr = [Any]()
+        var arr = [[String: Any]]()
         for _ in 0..<Int(entryCount) {
             let segmentDuration = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
             index += 4
@@ -102,15 +102,15 @@ func elstParser(data: Data) -> [String: Any] {
             let mediaRateFraction = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 2)
             index += 2
             
-            arr.append(["segmentDuration": segmentDuration])
-            arr.append(["mediaTime": mediaTime])
-            arr.append(["mediaRateInteger": mediaRateInteger])
-            arr.append(["mediaRateFraction": mediaRateFraction])
+            arr.append(["segmentDuration": segmentDuration,
+                        "mediaTime": mediaTime,
+                        "mediaRateInteger": mediaRateInteger,
+                        "mediaRateFraction": mediaRateFraction])
         }
         
         dicValue["flags"] = flags
         dicValue["entryCount"] = entryCount
-        dicValue["entryArr"] = arr
+        dicValue["entryInfo"] = arr
     }
     
     return dicValue

@@ -36,19 +36,20 @@ func stsdParser(data: Data) -> [String: Any] {
         let entryCount = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
         index += 4
         
-        var sizeArr = [String]()
+        var arr = [[String: Any]]()
         for _ in 0..<Int(entryCount) {
             let size = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
             let type = QHParserUtil.hexToString(data: data, startIndex: index + 4, length: 4)
             
-            sizeArr.append("\(size), type = \(type)")
+            arr.append(["size": size,
+                        "type": type])
             
             index += Int(size)
         }
         
         dicValue["flags"] = flags
         dicValue["entryCount"] = entryCount
-        dicValue["size"] = sizeArr
+        dicValue["entryInfo"] = arr
     }
     return dicValue
 }

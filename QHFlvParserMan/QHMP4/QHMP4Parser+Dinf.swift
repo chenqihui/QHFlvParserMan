@@ -28,13 +28,15 @@ func drefParser(data: Data) -> [String: Any] {
         let entryCount = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
         index += 4
         
-        var sizeArr = [String]()
+        var arr = [[String: Any]]()
         for _ in 0..<Int(entryCount) {
             let size = QHParserUtil.hexToDecimal(data: data, startIndex: index, count: 4)
             let type = QHParserUtil.hexToString(data: data, startIndex: index + 4, length: 4)
             let flag = QHParserUtil.hexToDecimal(data: data, startIndex: index + 8, count: 4)
             
-            sizeArr.append("\(size), type = \(type), flag = \(flag)")
+            arr.append(["size": size,
+                        "type": type,
+                        "flag": flag])
             
             if flag == 1 {
                 // 说明“url”中的字符串为空，表示track数据已包含在文件中
@@ -44,7 +46,7 @@ func drefParser(data: Data) -> [String: Any] {
         
         dicValue["flags"] = flags
         dicValue["entryCount"] = entryCount
-        dicValue["size"] = sizeArr
+        dicValue["entryInfo"] = arr
     }
     return dicValue
 }
