@@ -86,6 +86,16 @@ class QHMP4Parser: NSObject {
                 box.dicValue = drefParser(data: boxBody)
             case .stsd:
                 box.dicValue = stsdParser(data: boxBody)
+            case .stts:
+                box.dicValue = sttsParser(data: boxBody)
+            case .stss:
+                box.dicValue = stssParser(data: boxBody)
+            case .stsc:
+                box.dicValue = stscParser(data: boxBody)
+            case .stsz:
+                box.dicValue = stszParser(data: boxBody)
+            case .stco:
+                box.dicValue = stcoParser(data: boxBody)
             case .meta:
                 box.dicValue = metaParser(data: boxBody)
             case .elst:
