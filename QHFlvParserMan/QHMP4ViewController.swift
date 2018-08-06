@@ -38,7 +38,8 @@ class QHMP4ViewController: NSViewController {
             self.parser = QHMP4Parser(path: path)
             self.parser!.test()
             self.mainOutlineView.reloadData()
-            self.mainOutlineView.expandItem(nil, expandChildren: true)
+            // 展开子列表
+//            self.mainOutlineView.expandItem(nil, expandChildren: true)
         }
     }
     
