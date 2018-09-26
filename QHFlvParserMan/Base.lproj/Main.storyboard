@@ -1354,6 +1354,19 @@
             </objects>
             <point key="canvasLocation" x="64" y="1322"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fqK-kv-KSA">
+            <objects>
+                <viewController storyboardIdentifier="QHM3U8ViewController" id="RAr-tK-JSa" customClass="QHM3U8ViewController" customModule="QHFlvParserMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="DvT-vK-Uhs">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="mKE-nh-kCC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-37" y="1766"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
