@@ -45,7 +45,7 @@ extension QHM3U8Parser {
                 else {
                     if let d = data {
                         if let m3u8String = String(data: d, encoding: String.Encoding.utf8) {
-                            print("\(m3u8String)")
+//                            print("\(m3u8String)")
                             completionHandler(m3u8String)
                             return
                         }
@@ -58,6 +58,16 @@ extension QHM3U8Parser {
         else {
             completionHandler(nil)
         }
+    }
+    
+    // 下载 HLS 的播放文件 ts 或者 mp4
+    func p_download(_ url: URL) {
+        let downloadTask = URLSession.shared.downloadTask(with: url) { (location, response, error) in
+            if let locat = location {
+                print("location:\(locat.relativeString)")
+            }
+        }
+        downloadTask.resume()
     }
 }
 
@@ -77,19 +87,56 @@ extension QHM3U8Parser {
         }
     }
     
-    func m3u8Parser(_ path: String, data: String) -> QHM3UObj? {
-        if self.p_valid(data: data) == false {
-            return nil
+    func m3u8Parser(_ path: String, data d: String? = .none, completionHandler: @escaping (QHM3UObj?) -> Swift.Void) {
+        if let data = d {
+            if self.p_valid(data: data) == false {
+                completionHandler(nil)
+                return
+            }
+            let m3u8Arr = data.components(separatedBy: "\n") as [String]
+//            print("\(m3u8Arr)")
+            
+            var m3uObj = QHM3UObj(path: path)
+            m3uObj.type = typeParser(m3u8Arr)
+            m3uObj.headerTag = headerParser(m3u8Arr)
+            m3uObj.bodyArr = bodyParser(path, m3u8Arr)
+            
+            if m3uObj.bodyArr.count > 0 {
+                if var body = m3uObj.bodyArr.first {
+                    if let bodyUrl = body.url {
+                        if var subUrl = URL(string: bodyUrl) {
+                            if body.isAP == false {
+                                if var url = m3uObj.relativePath {
+                                    url.appendPathComponent(bodyUrl)
+                                    subUrl = url
+                                }
+                            }
+                            
+                            if subUrl.pathExtension.uppercased() == "M3U8" {
+                                m3u8Parser(subUrl.relativeString) { (obj) in
+                                    if let o = obj {
+                                        m3uObj.subM3UObj = [o]
+                                    }
+                                    completionHandler(m3uObj)
+                                }
+                                return
+                            }
+                            else {
+//                                p_download(subUrl)
+                            }
+                        }
+                    }
+                }
+            }
+            completionHandler(m3uObj)
         }
-        let m3u8Arr = data.components(separatedBy: "\n") as [String]
-        print("\(m3u8Arr)")
-        
-        var m3uObj = QHM3UObj(path: path)
-        m3uObj.type = typeParser(m3u8Arr)
-        m3uObj.headerTag = headerParser(m3u8Arr)
-        m3uObj.bodyArr = bodyParser(path, m3u8Arr)
-        
-        return m3uObj
+        else {
+            p_getPlaylist(path) { (data) in
+                self.m3u8Parser(path, data: data, completionHandler: { (m3uObj) in
+                    completionHandler(m3uObj)
+                })
+            }
+        }
     }
 }
 
@@ -100,10 +147,19 @@ extension QHM3U8Parser {
 //        valid(path) { (bValid) in
 //            print("\(bValid ? "是 M3U8 文件" : "不是 M3U8 文件")")
 //        }
-        getPlaylist(path) { (data) in
-            if let m3uObj = self.m3u8Parser(self.path, data: data!) {
-                print("\(m3uObj)")
+        // 2、
+        m3u8Parser(path) { (m3uObj) in
+            if let obj = m3uObj {
+                print("\(obj)")
             }
         }
+        // 3、
+//        getPlaylist(path) { (data) in
+//            self.m3u8Parser(self.path, data: data, completionHandler: { (m3uObj) in
+//                if let obj = m3uObj {
+//                    print("\(obj)")
+//                }
+//            })
+//        }
     }
 }

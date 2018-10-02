@@ -13,11 +13,6 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
-        let vc = QHM3U8ViewController.create()
-        vc.start(path: "http://127.0.0.1/resource/m3u8/seg/test.m3u8")
-//        vc.start(path: "http://10.7.66.56/resource/m3u8/ff/playlist.m3u8")
-//        vc.start(path: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
     }
     
     
@@ -45,10 +40,10 @@ class MainViewController: NSViewController {
                     window = NSWindow(contentViewController: vc)
                     vc.start(path: url.path)
                 }
-                else if pathExtension == "M3U8" {
+                else if pathExtension == "TS" {
                     let vc = QHM3U8ViewController.create()
                     window = NSWindow(contentViewController: vc)
-                    vc.start(path: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
+                    vc.start(path: url.path)
                 }
                 if let w = window {
                     w.orderFront(nil)

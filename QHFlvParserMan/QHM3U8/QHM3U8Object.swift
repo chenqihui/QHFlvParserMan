@@ -29,12 +29,17 @@ public let kBANDWIDTH = "BANDWIDTH"
 
 struct QHM3UObj {
     var path: String!
+    var relativePath: URL?
     var type = QHBasicPlaylistType.unknown
     var headerTag = [QHM3UTag]()
     var bodyArr = [QHM3UBody]()
+    var subM3UObj: [QHM3UObj]? // First
     
     init(path p: String) {
         path = p
+        if let url = URL(string: path) {
+            relativePath = url.deletingLastPathComponent()
+        }
     }
 }
 

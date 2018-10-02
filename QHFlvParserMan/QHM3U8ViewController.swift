@@ -27,8 +27,6 @@ class QHM3U8ViewController: NSViewController {
     
     func start(path: String) {
         DispatchQueue.main.async {
-            self.parser = QHM3U8Parser(path: path)
-            self.parser!.test()
         }
     }
     

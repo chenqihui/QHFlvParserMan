@@ -50,3 +50,9 @@
  gear4/prog_index.m3u8
  
  */
+
+/*
+ 资源 Media 里面的 fileSequence0.ts 是 bipbopall.m3u8 下载的第一个 m3u8 的第一个 ts 文件，即 gear1，
+ 通过上面 BANDWIDTH=200000，而下载的 ts 文件是 Content-Length：250228，时间：250228 / 200000 = 12s
+ */
+
