@@ -10,7 +10,8 @@ import Cocoa
 
 class QHM3U8ViewController: NSViewController {
     
-    var parser: QHM3U8Parser?
+    var m3uParser: QHM3U8Parser?
+    var tsParser: QHTSParser?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class QHM3U8ViewController: NSViewController {
     
     func start(path: String) {
         DispatchQueue.main.async {
+            self.tsParser = QHTSParser(path: path)
+            self.tsParser?.parser()
         }
     }
     

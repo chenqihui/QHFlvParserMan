@@ -122,7 +122,7 @@ class ViewController: NSViewController {
     func start(path: String) {
         DispatchQueue.main.async {
             self.flvParser = QHFlvParser(path: path)
-            let bResult = self.flvParser!.filePaser()
+            let bResult = self.flvParser!.fileParser()
             if bResult == false {
                 print("文件解析异常")
                 return

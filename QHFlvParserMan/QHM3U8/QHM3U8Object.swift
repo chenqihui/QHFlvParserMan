@@ -17,6 +17,7 @@ enum QHBasicPlaylistType {
 }
 
 
+public let kM3U8 = "M3U8"
 public let kEXTM3U = "#EXTM3U"
 public let kEXT_X_STREAM_INF = "#EXT-X-STREAM-INF"
 public let kEXTINF = "#EXTINF"

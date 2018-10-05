@@ -35,14 +35,14 @@ class QHFlvParser: NSObject {
             print("类型：\(type())")
             print("头部长度：\(headerLength())")
             
-            let _ = filePaser()
+            let _ = fileParser()
         }
         else {
             print("不是 flv 文件")
         }
     }
     
-    func filePaser() -> Bool {
+    func fileParser() -> Bool {
         if isFlvFile() {
             var flvOffset: uint = 0
             var flvTag = QHFlvTag()

@@ -46,6 +46,11 @@ class QHParserUtil: NSObject {
         return value
     }
     
+    class func IntToString(u: UInt) -> String {
+        let value = String(format: "%c", u)
+        return value
+    }
+    
     class func printHex(data: Data) {
         var hexString = ""
         for i in 0..<data.count {

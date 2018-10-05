@@ -28,6 +28,10 @@
 		744F4064215B5B8B004D0627 /* QHM3U8Parser+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F4063215B5B8B004D0627 /* QHM3U8Parser+Header.swift */; };
 		744F4066215B5DC8004D0627 /* QHM3U8Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F4065215B5DC8004D0627 /* QHM3U8Test.swift */; };
 		74675EE22163DBBF0011C3EB /* fileSequence0.ts in Resources */ = {isa = PBXBuildFile; fileRef = 74675EE12163DBBF0011C3EB /* fileSequence0.ts */; };
+		74675EE52163EEDE0011C3EB /* QHTSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EE42163EEDE0011C3EB /* QHTSObject.swift */; };
+		74675EE721650F270011C3EB /* QHTSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EE621650F270011C3EB /* QHTSParser.swift */; };
+		74675EE92165135C0011C3EB /* QHM3U8Parser+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EE82165135C0011C3EB /* QHM3U8Parser+Private.swift */; };
+		74675EEB216714190011C3EB /* QHTSTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EEA216714190011C3EB /* QHTSTest.swift */; };
 		749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382EE20CFA03800EEC47D /* AppDelegate.swift */; };
 		749382F120CFA03800EEC47D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382F020CFA03800EEC47D /* ViewController.swift */; };
 		749382F320CFA03800EEC47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749382F220CFA03800EEC47D /* Assets.xcassets */; };
@@ -71,6 +75,10 @@
 		744F4063215B5B8B004D0627 /* QHM3U8Parser+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHM3U8Parser+Header.swift"; sourceTree = "<group>"; };
 		744F4065215B5DC8004D0627 /* QHM3U8Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHM3U8Test.swift; sourceTree = "<group>"; };
 		74675EE12163DBBF0011C3EB /* fileSequence0.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = fileSequence0.ts; sourceTree = "<group>"; };
+		74675EE42163EEDE0011C3EB /* QHTSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTSObject.swift; sourceTree = "<group>"; };
+		74675EE621650F270011C3EB /* QHTSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTSParser.swift; sourceTree = "<group>"; };
+		74675EE82165135C0011C3EB /* QHM3U8Parser+Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHM3U8Parser+Private.swift"; sourceTree = "<group>"; };
+		74675EEA216714190011C3EB /* QHTSTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTSTest.swift; sourceTree = "<group>"; };
 		749382EB20CFA03800EEC47D /* QHFlvParserMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QHFlvParserMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749382EE20CFA03800EEC47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		749382F020CFA03800EEC47D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,7 @@
 			children = (
 				744871042159D50F0057E37D /* QHM3U8Object.swift */,
 				74487100215950560057E37D /* QHM3U8Parser.swift */,
+				74675EE82165135C0011C3EB /* QHM3U8Parser+Private.swift */,
 				744F405B215B5AE8004D0627 /* QHM3U8Parser+Type.swift */,
 				744F4063215B5B8B004D0627 /* QHM3U8Parser+Header.swift */,
 				744F405F215B5B60004D0627 /* QHM3U8Parser+Body.swift */,
@@ -126,6 +135,16 @@
 				744F4065215B5DC8004D0627 /* QHM3U8Test.swift */,
 			);
 			path = QHM3U8;
+			sourceTree = "<group>";
+		};
+		74675EE32163ED690011C3EB /* QHTS */ = {
+			isa = PBXGroup;
+			children = (
+				74675EE42163EEDE0011C3EB /* QHTSObject.swift */,
+				74675EE621650F270011C3EB /* QHTSParser.swift */,
+				74675EEA216714190011C3EB /* QHTSTest.swift */,
+			);
+			path = QHTS;
 			sourceTree = "<group>";
 		};
 		749382E220CFA03800EEC47D = {
@@ -147,6 +166,7 @@
 		749382ED20CFA03800EEC47D /* QHFlvParserMan */ = {
 			isa = PBXGroup;
 			children = (
+				74675EE32163ED690011C3EB /* QHTS */,
 				744870FF21594F280057E37D /* QHM3U8 */,
 				74B19A7B2106CA0F008F70C5 /* Documentor */,
 				7430B7002101928B0037D712 /* QHParserUtil */,
@@ -300,8 +320,10 @@
 				744B3CC520FBA91B0086505F /* QHFlvParser+Script.swift in Sources */,
 				749382F120CFA03800EEC47D /* ViewController.swift in Sources */,
 				7493831A20D665D000EEC47D /* QHFlvObject.swift in Sources */,
+				74675EE721650F270011C3EB /* QHTSParser.swift in Sources */,
 				744B3CC720FBA9670086505F /* QHFlvParser+Audio.swift in Sources */,
 				7430B7062101C0370037D712 /* QHMP4Test.swift in Sources */,
+				74675EE92165135C0011C3EB /* QHM3U8Parser+Private.swift in Sources */,
 				7430B704210193AD0037D712 /* QHMP4Object.swift in Sources */,
 				74B19A812106CAFA008F70C5 /* QHMP4Parser+Root.swift in Sources */,
 				744B3CCB20FBA9A20086505F /* QHFlvParser+Tag.swift in Sources */,
@@ -311,12 +333,14 @@
 				744B3CBF20FBA5DA0086505F /* QHFlvParser.swift in Sources */,
 				74B19A8B2106D0BD008F70C5 /* QHMP4Parser+Dinf.swift in Sources */,
 				7430B702210192A70037D712 /* QHParserUtil.swift in Sources */,
+				74675EEB216714190011C3EB /* QHTSTest.swift in Sources */,
 				744B3CC920FBA9730086505F /* QHFlvParser+Video.swift in Sources */,
 				744B3CC120FBA64C0086505F /* QHFlvTest.swift in Sources */,
 				744F4066215B5DC8004D0627 /* QHM3U8Test.swift in Sources */,
 				74B19A852106CDE3008F70C5 /* QHMP4Parser+Trak.swift in Sources */,
 				749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */,
 				744871052159D50F0057E37D /* QHM3U8Object.swift in Sources */,
+				74675EE52163EEDE0011C3EB /* QHTSObject.swift in Sources */,
 				74487101215950560057E37D /* QHM3U8Parser.swift in Sources */,
 				74487103215953950057E37D /* QHM3U8ViewController.swift in Sources */,
 				744F4062215B5B69004D0627 /* QHM3U8Parser+Tag.swift in Sources */,
