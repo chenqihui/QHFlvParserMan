@@ -7,10 +7,10 @@
 //
 
 /*
- 4740 0010
+ head = 4740 0010
            00
-             00 b00d 0001 c100 00
+ pat head = 00 b00d 0001 c100 00
  00 01e1 00
-   e8 f95e 7d
+ crc32 = e8 f95e 7d
              ff ffff ffff ffff ffff ffff
  */

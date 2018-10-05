@@ -32,6 +32,11 @@
 		74675EE721650F270011C3EB /* QHTSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EE621650F270011C3EB /* QHTSParser.swift */; };
 		74675EE92165135C0011C3EB /* QHM3U8Parser+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EE82165135C0011C3EB /* QHM3U8Parser+Private.swift */; };
 		74675EEB216714190011C3EB /* QHTSTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EEA216714190011C3EB /* QHTSTest.swift */; };
+		74675EEF21680ACD0011C3EB /* QHTSParser+PAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EEE21680ACD0011C3EB /* QHTSParser+PAT.swift */; };
+		74675EF121680B020011C3EB /* QHTSParser+PMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EF021680B020011C3EB /* QHTSParser+PMT.swift */; };
+		74675EF321680B2F0011C3EB /* QHTSParser+ADPAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EF221680B2F0011C3EB /* QHTSParser+ADPAT.swift */; };
+		74675EF521680B570011C3EB /* QHTSParser+PES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EF421680B570011C3EB /* QHTSParser+PES.swift */; };
+		74675EF721680B800011C3EB /* QHTSParser+TS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74675EF621680B800011C3EB /* QHTSParser+TS.swift */; };
 		749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382EE20CFA03800EEC47D /* AppDelegate.swift */; };
 		749382F120CFA03800EEC47D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382F020CFA03800EEC47D /* ViewController.swift */; };
 		749382F320CFA03800EEC47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749382F220CFA03800EEC47D /* Assets.xcassets */; };
@@ -79,6 +84,11 @@
 		74675EE621650F270011C3EB /* QHTSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTSParser.swift; sourceTree = "<group>"; };
 		74675EE82165135C0011C3EB /* QHM3U8Parser+Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHM3U8Parser+Private.swift"; sourceTree = "<group>"; };
 		74675EEA216714190011C3EB /* QHTSTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTSTest.swift; sourceTree = "<group>"; };
+		74675EEE21680ACD0011C3EB /* QHTSParser+PAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHTSParser+PAT.swift"; sourceTree = "<group>"; };
+		74675EF021680B020011C3EB /* QHTSParser+PMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHTSParser+PMT.swift"; sourceTree = "<group>"; };
+		74675EF221680B2F0011C3EB /* QHTSParser+ADPAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHTSParser+ADPAT.swift"; sourceTree = "<group>"; };
+		74675EF421680B570011C3EB /* QHTSParser+PES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHTSParser+PES.swift"; sourceTree = "<group>"; };
+		74675EF621680B800011C3EB /* QHTSParser+TS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QHTSParser+TS.swift"; sourceTree = "<group>"; };
 		749382EB20CFA03800EEC47D /* QHFlvParserMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QHFlvParserMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		749382EE20CFA03800EEC47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		749382F020CFA03800EEC47D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +152,11 @@
 			children = (
 				74675EE42163EEDE0011C3EB /* QHTSObject.swift */,
 				74675EE621650F270011C3EB /* QHTSParser.swift */,
+				74675EF621680B800011C3EB /* QHTSParser+TS.swift */,
+				74675EEE21680ACD0011C3EB /* QHTSParser+PAT.swift */,
+				74675EF021680B020011C3EB /* QHTSParser+PMT.swift */,
+				74675EF221680B2F0011C3EB /* QHTSParser+ADPAT.swift */,
+				74675EF421680B570011C3EB /* QHTSParser+PES.swift */,
 				74675EEA216714190011C3EB /* QHTSTest.swift */,
 			);
 			path = QHTS;
@@ -338,13 +353,18 @@
 				744B3CC120FBA64C0086505F /* QHFlvTest.swift in Sources */,
 				744F4066215B5DC8004D0627 /* QHM3U8Test.swift in Sources */,
 				74B19A852106CDE3008F70C5 /* QHMP4Parser+Trak.swift in Sources */,
+				74675EEF21680ACD0011C3EB /* QHTSParser+PAT.swift in Sources */,
 				749382EF20CFA03800EEC47D /* AppDelegate.swift in Sources */,
 				744871052159D50F0057E37D /* QHM3U8Object.swift in Sources */,
 				74675EE52163EEDE0011C3EB /* QHTSObject.swift in Sources */,
 				74487101215950560057E37D /* QHM3U8Parser.swift in Sources */,
+				74675EF321680B2F0011C3EB /* QHTSParser+ADPAT.swift in Sources */,
+				74675EF521680B570011C3EB /* QHTSParser+PES.swift in Sources */,
+				74675EF121680B020011C3EB /* QHTSParser+PMT.swift in Sources */,
 				74487103215953950057E37D /* QHM3U8ViewController.swift in Sources */,
 				744F4062215B5B69004D0627 /* QHM3U8Parser+Tag.swift in Sources */,
 				74B19A832106CCF2008F70C5 /* QHMP4Parser+Moov.swift in Sources */,
+				74675EF721680B800011C3EB /* QHTSParser+TS.swift in Sources */,
 				74B19A892106CFBD008F70C5 /* QHMP4Parser+Minf.swift in Sources */,
 				74B19A9C21078395008F70C5 /* QHMP4Parser+Udta.swift in Sources */,
 				744F4064215B5B8B004D0627 /* QHM3U8Parser+Header.swift in Sources */,
