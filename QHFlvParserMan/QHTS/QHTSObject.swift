@@ -8,6 +8,14 @@
 
 import Foundation
 
+enum QHTSTpye {
+    case none
+    case PAT
+    case PMT
+    case ADAPT
+    case NIT
+}
+
 struct QHTSObj {
     
 }
@@ -16,8 +24,9 @@ struct QHTS {
     var head: QHTSHead?
     var adapt: QHTSAdaptationField?
     var pat: QHTSPAT?
-    var pmt: QHSTPMT?
+    var pmt: QHTSPMT?
     var payload: QHPES?
+    var type: QHTSTpye = .none
 }
 
 struct QHPES {
@@ -67,42 +76,46 @@ struct QHTSPAT {
 }
 
 struct QHTSPATProgram {
-    var programNumber = -1// 节目号为0x0000时表示这是NIT，节目号为0x0001时,表示这是PMT
+    var programNumber = -1 // 节目号为0x0000时表示这是NIT，节目号为0x0001时,表示这是PMT
     var reserved3 = -1
     var pid = -1
 }
 
-struct QHSTPMT {
+struct QHTSPMT {
     var tableId = -1
     var sectionSyntaxIndicator = -1
     var zero = -1
     var reserved1 = -1
-    var sectionLength = -1
-    var programNumber = -1
+    var sectionLength: UInt64 = 0
+    var programNumber: UInt64 = 0
     var reserved2 = -1
     var versionNumber = -1
     var currentNextIndicator = -1
     var sectionNumber = -1
     var lastSectionNumber = -1
     var reserved3 = -1
-    var pcr_pid = -1
+    var pcrPID: UInt64 = 0
     var reserved4 = -1
-    var programInfoLength = -1
-    var startLoop = -1
+    var programInfoLength: UInt64 = 0
+    var streams = [QHTSPMTStream]()
+    var crc32: UInt64 = 0
+}
+
+struct QHTSPMTStream {
+    var streamType = -1 // 流类型，标志是Video还是Audio还是其他数据，h.264编码对应0x1b，aac编码对应0x0f，mp3编码对应0x03
+    var reserved1 = -1
     var elementaryPID = -1
-    var reserved5 = -1
+    var reserved2 = -1
     var ESInfoLength = -1
-    var endLoop = -1
-    var crc32 = -1
 }
 
 struct QHPesHead {
-    var startCode = -1
-    var streamId = -1
-    var packetLength = -1
-    var flag1 = -1
-    var flag2 = -1
-    var dataLength = -1
-    var pts = -1
-    var dts = -1
+    var startCode = -1 // 开始码，固定为0x000001
+    var streamId = -1 // 音频取值（0xc0-0xdf），通常为0xc0 视频取值（0xe0-0xef），通常为0xe0
+    var packetLength = -1 // 后面pes数据的长度，0表示长度不限制，只有视频数据长度会超过0xffff
+    var flag1 = -1 // 通常取值0x80，表示数据不加密、无优先级、备份的数据
+    var flag2 = -1 // 取值0x80表示只含有pts，取值0xc0表示含有pts和dts
+    var dataLength = -1 // 后面数据的长度，取值5或10
+    var pts: UInt64 = 0
+    var dts: UInt64 = 0
 }
