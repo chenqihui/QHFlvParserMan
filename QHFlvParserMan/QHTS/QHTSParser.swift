@@ -15,6 +15,10 @@ class QHTSParser: NSObject {
     let fileData: Data
     var PMTPIDs = [Int]()
     var NITPIDs = [Int]()
+    var tsArr = [QHTS]()
+    var h264PIDs = [Int]()
+    var ACCPIDs = [Int]()
+    var MP3PIDs = [Int]()
     
     init(path: String) {
         do {
@@ -29,13 +33,15 @@ class QHTSParser: NSObject {
     
     func parser() {
         var offset: Int = 0
-        var tsArr = [QHTS]()
+        var id = 0
         while offset < fileData.count {
             let endOffSet = offset + tsLength
             let tsData = fileData[offset..<endOffSet]
-            let ts = tsPaser(data: tsData)
+            var ts = tsPaser(data: tsData)
+            ts.id = id
             tsArr.append(ts)
             offset = endOffSet
+            id += 1
         }
         print("end")
     }

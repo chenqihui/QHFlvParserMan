@@ -64,6 +64,16 @@ extension QHTSParser {
             let v4 = UInt64(data[sIdx + 3])
             stream.ESInfoLength = Int(v3_1 + v4)
             pmt.streams.append(stream)
+            
+            if stream_type == 0x1b { // h.264
+                h264PIDs.append(stream.elementaryPID)
+            }
+            else if stream_type == 0x0f { // aac
+                ACCPIDs.append(stream.elementaryPID)
+            }
+            else if stream_type == 0x03 { // mp3
+                MP3PIDs.append(stream.elementaryPID)
+            }
         }
         
         return pmt

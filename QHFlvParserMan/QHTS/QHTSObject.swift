@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum QHTSTpye {
-    case none
-    case PAT
-    case PMT
-    case ADAPT
-    case NIT
+enum QHTSTpye: String {
+    case none = "none"
+    case PAT = "PAT"
+    case PMT = "PMT"
+    case ADAPT = "Adpat"
+    case NIT = "NIT"
 }
 
 struct QHTSObj {
@@ -21,6 +21,7 @@ struct QHTSObj {
 }
 
 struct QHTS {
+    var id = -1
     var head: QHTSHead?
     var adapt: QHTSAdaptationField?
     var pat: QHTSPAT?

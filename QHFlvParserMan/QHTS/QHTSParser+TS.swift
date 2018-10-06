@@ -56,6 +56,12 @@ extension QHTSParser {
             let pes = pesParser(pesData, pesData.startIndex)
             ts.payload = pes
         }
+        else {
+            let preLen = start + 1
+            let pesData = data[preLen..<data.endIndex]
+            let pes = pesParser(pesData, pesData.startIndex)
+            ts.payload = pes
+        }
         
         return ts
     }

@@ -108,10 +108,11 @@ extension QHTSParser {
                 adapt.piecewiseRate = piecewise_rate
             }
             if seamless_splice_flag == 1 {
-                let v2 = UInt64(data[startIndex + 1])
-                let splic_type = (v2 & 0b11110000) >> 4
-                let DTS_next_AU = (v2 & 0b00001110) >> 1
-                let marker_bit = (v2 & 0b00000001)
+//                let v2 = UInt64(data[startIndex + 1])
+//                for
+//                let splic_type = (v2 & 0b11110000) >> 4
+//                let DTS_next_AU = (v2 & 0b00001110) >> 1
+//                let marker_bit = (v2 & 0b00000001)
             }
         }
         
