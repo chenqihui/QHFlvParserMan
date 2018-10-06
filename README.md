@@ -28,3 +28,7 @@ FLV
 MP4
 
 ![image](https://github.com/chenqihui/QHFlvParserMan/blob/master/screenshots/QHMP4ParserMan.png)
+
+M3U8 -> TS
+
+![image](https://github.com/chenqihui/QHFlvParserMan/blob/master/screenshots/QHTSParserMan.png)
