@@ -20,7 +20,7 @@ extension QHMP4Parser {
         
         var dicValue = [String: Any]()
         
-        var index = data.startIndex
+        let index = data.startIndex
         let version = uint(data[index])
         dicValue["version"] = version
         

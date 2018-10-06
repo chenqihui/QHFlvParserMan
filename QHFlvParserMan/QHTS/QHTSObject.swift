@@ -54,9 +54,24 @@ struct QHTSHead {
 
 struct QHTSAdaptationField {
     var length: UInt64 = 0
-    var flag: UInt64 = 0
-    var pcr: Data?
-    var stuffingBtyes = 255
+    var discontinuityIndicator = -1
+    var randomAccessIndicator = -1
+    var elementaryStreamPriorityIndicator = -1
+    
+    var programClockReferenceBase: UInt64 = 0
+    var programClockReferenceExtension: UInt64 = 0
+    
+    var originalProgramClockReferenceBase: UInt64 = 0
+    var originalProgramClockReferenceExtension: UInt64 = 0
+    
+    var spliceCountdown = -1
+    
+    var transportPrivateDataLength: UInt64 = 0
+    
+    var adaptationFieldExensionLength: UInt64 = 0
+    var ltwValidFlag = -1
+    var ltwOffset: UInt64 = 0
+    var piecewiseRate: UInt64 = 0
 }
 
 struct QHTSPAT {
